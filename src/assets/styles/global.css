@@ -12,9 +12,10 @@
   font-style: italic;
 }
 
-body {
+html {
   font-family: Poppins;
   color: #fff;
+  background-color: #0B1D26;
 }
 
 /* Box sizing rules */

@@ -6,13 +6,18 @@ import Nav from "./nav";
 const Wrapper = styled.div`
   background-image: url(${background});
   background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   position: relative;
 
   &:before {
-    content: '';
+    content: "";
     display: block;
-    background: linear-gradient(330.24deg, rgba(11, 29, 38, 0) 31.06%, #0B1D26 108.93%);
+    background: linear-gradient(
+      330.24deg,
+      rgba(11, 29, 38, 0) 31.06%,
+      #0b1d26 108.93%
+    );
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: absolute;
     top: 0;
@@ -27,15 +32,12 @@ const Content = styled.div`
 `;
 
 const Layout = ({ children }) => {
-
   return (
     <Wrapper>
       <Nav />
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
