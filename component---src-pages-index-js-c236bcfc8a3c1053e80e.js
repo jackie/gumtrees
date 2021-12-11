@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgumtrees=self.webpackChunkgumtrees||[]).push([[678],{7704:function(e,t,n){n.r(t);var u=n(7294),l=n(9).default.h1.withConfig({displayName:"pages__Title",componentId:"sc-9dlhc7-0"})(["color:pink;font-family:Queens;"]);t.default=function(){return u.createElement(l,null,"Beneath the Gum Trees")}}}]);
+//# sourceMappingURL=component---src-pages-index-js-c236bcfc8a3c1053e80e.js.map
