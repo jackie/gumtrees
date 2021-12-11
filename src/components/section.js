@@ -3,12 +3,15 @@ import styled from "styled-components";
 
 let Container = styled.div`
   background: #0b1d26;
-  position: relative;
   display: flex;
   flex-direction: row;
-  width: 80%;
-  height: 100%;
-  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto auto 12.5em;
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 `;
 
 let Number = styled.div`
@@ -24,9 +27,10 @@ let Number = styled.div`
 `;
 
 let Image = styled.img`
-  max-width: 565px;
-  height: 720px;
+  width: 45%;
+  height: 45em;
   position: relative;
+  justify-self: flex-start;
 `;
 
 let Subtitle = styled.div`
@@ -54,9 +58,10 @@ let Action = styled.div`
 
 let TextBox = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
-  margin-right: 150px;
-  max-width: 650px;
+  width: 45%;
+  justify-self: flex-end;
 `;
 
 const Section = ({ number, image, subtitle, title, description, action }) => {

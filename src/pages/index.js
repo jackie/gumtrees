@@ -1,9 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
 import "../assets/styles/global.css";
+import PaddedWrapper from "../components/paddedWrapper";
 import Section from "../components/section";
 import couple from "../assets/images/jackie-chris.png";
 import polperro from "../assets/images/polperro.png";
+import accommodation from "../assets/images/accommodation.png";
 
 // import { ReactComponent as Scribble } from "../assets/images/Underline_10.svg";
 
@@ -81,22 +83,33 @@ const IndexPage = () => {
   return (
     <>
       <HeaderSection />
-      <Section
-        number="01"
-        subtitle="the date"
-        title="February 3, 2023"
-        description="2/3/23 or 3/2/23? Whatever way you say it, one thing is for sure, it’s summer in Australia. So bring your bathers, sunscreen and hats because we are going to kick off 2023 like nothing else."
-        action="add to calendar"
-        image={couple}
-      />
-      <Section
-        number="02"
-        subtitle="the venue"
-        title="Polperro Winery"
-        description="Polperro Vineyard Dining is nestled among the vines and shaded by ancient Angophora Myrtaceae, Polperro is a stunning 25 acre property in Red Hill, the heart of the renown wine region – the Mornington Peninsula."
-        action="learn more"
-        image={polperro}
-      />
+      <PaddedWrapper>
+        <Section
+          number="01"
+          subtitle="the date"
+          title="February 3, 2023"
+          description="2/3/23 or 3/2/23? Whatever way you say it, one thing is for sure, it’s summer in Australia. So bring your bathers, sunscreen and hats because we are going to kick off 2023 like nothing else."
+          action="add to calendar"
+          image={couple}
+        />
+        <Section
+          number="02"
+          subtitle="the venue"
+          title="Polperro Winery"
+          description="Polperro Vineyard Dining is nestled among the vines and shaded by ancient Angophora Myrtaceae, Polperro is a stunning 25 acre property in Red Hill, the heart of the renown wine region – the Mornington Peninsula."
+          action="learn more"
+          image={polperro}
+        />
+        <Section
+          number="03"
+          subtitle="accommodation"
+          title="Mornington Peninsula"
+          description="A scenic 45 minutes (ish) drive from Melbourne.
+          Situated south-east of Melbourne, Mornington Peninsula is a boot-shaped region filled with golden beaches, bubbling hot springs, boutique wineries, a stunning clifftop walk known as the Millionaire’s Walk and some pretty amazing food too."
+          action="view accommodations"
+          image={accommodation}
+        />
+      </PaddedWrapper>
     </>
   );
 };
