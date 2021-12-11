@@ -12,6 +12,7 @@ let Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 let IntroTitle = styled.div`
@@ -29,6 +30,13 @@ let Title = styled.h1`
 let Subtitle = styled.h2`
   font-size: 3.625em;
   font-weight: 500;
+`;
+
+const Gradient = styled.div`
+  background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0B1D26 61.38%);
+  height: 500px;
+  width: 100%;
+  align-self: flex-end;
 `;
 
 let FollowUp = styled.div`
@@ -51,6 +59,7 @@ const HeaderSection = () => {
         <Subtitle>February 3, 2023</Subtitle>
         <FollowUp>Formal invitations to follow</FollowUp>
       </Content>
+      <Gradient />
     </Header>
   )
 }
@@ -65,6 +74,13 @@ const IndexPage = () => {
         title="February 3, 2023"
         description="2/3/23 or 3/2/23? Whatever way you say it, one thing is for sure, it’s summer in Australia. So bring your bathers, sunscreen and hats because we are going to kick off 2023 like nothing else."
         action="add to calendar"
+      />
+      <Section
+        number="02"
+        subtitle="the venue"
+        title="Polperro Winery"
+        description="Polperro Vineyard Dining is nestled among the vines and shaded by ancient Angophora Myrtaceae, Polperro is a stunning 25 acre property in Red Hill, the heart of the renown wine region – the Mornington Peninsula."
+        action="learn more"
       />
     </>
   )

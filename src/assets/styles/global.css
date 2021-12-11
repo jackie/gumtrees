@@ -8,12 +8,13 @@
 @font-face {
   font-family: "Queens";
   src: url("../fonts/QueensTrial-BoldItalic.ttf") format("truetype");
-  font-weight: 600;
+  font-weight: 700;
   font-style: italic;
 }
 
 body {
   font-family: Poppins;
+  color: #fff;
 }
 
 /* Box sizing rules */

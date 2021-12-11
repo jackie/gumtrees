@@ -20,16 +20,6 @@ const Wrapper = styled.div`
     right: 0;
     bottom: 0;
   }
-
-  &:after {
-    content: '';
-    display: block;
-    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0B1D26 61.38%);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-  }
 `;
 
 const Content = styled.div`
