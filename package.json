@@ -16,6 +16,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "babel-plugin-styled-components": "^2.0.2",
     "framer-motion": "^5.4.5",
     "gatsby": "^4.3.0",
@@ -24,6 +25,8 @@
     "prettier": "^2.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-lottie": "^1.2.3",
+    "react-router-dom": "^6.1.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {

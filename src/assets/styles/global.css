@@ -12,11 +12,20 @@
   font-style: italic;
 }
 
+
+:root {
+  --dark: #0B1D26;
+  --secondary: #bdc3c7;
+  --green: #50B04E;
+  --white: #FFFFFF;
+}
+
 html {
   font-family: Poppins;
-  color: #fff;
-  background-color: #0B1D26;
+  color: var(--white);
+  background-color: var(--dark);
 }
+
 
 /* Box sizing rules */
 *,

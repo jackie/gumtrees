@@ -5,29 +5,45 @@ import { motion } from "framer-motion";
 
 const imageVariants = {
   offscreen: {
-    y: -30,
-    opacity: 0
+    y: -60,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 30,
+    opacity: 1,
+    transition: {
+      type: "easeInOut",
+      duration: 1.2,
+    },
+  },
+};
+
+const numberVariants = {
+  offscreen: {
+    y: 60,
+    opacity: 0,
   },
   onscreen: {
     y: 0,
     opacity: 1,
     transition: {
-      type: "easeIn",
-      duration: 0.8
-    }
-  }
+      type: "easeInOut",
+      duration: 0.8,
+    },
+  },
 };
 
 let Container = styled.div`
-  background: #0b1d26;
+  background: var(--dark);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin: auto auto 12.5em;
 
-  &:nth-child(even) {
-    flex-direction: row-reverse;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    margin: 20px;
   }
 `;
 
@@ -48,10 +64,22 @@ let ImageContainer = styled(motion.div)`
   height: 45em;
   position: relative;
   justify-self: flex-start;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    justify-self: center;
+  }
+`;
+
+let NumberContainer = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 `;
 
 let Subtitle = styled.div`
-  color: #50b04e;
+  color: var(--green);
   font-size: 1.125em;
   text-transform: uppercase;
   letter-spacing: 0.5em;
@@ -70,6 +98,7 @@ let Description = styled.div`
   font-weight: 300;
   letter-spacing: 0.03em;
   margin-bottom: 20px;
+  color: var(--secondary);
 `;
 
 let TextBox = styled.div`
@@ -78,9 +107,14 @@ let TextBox = styled.div`
   flex-direction: column;
   width: 45%;
   justify-self: flex-end;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    justify-self: center;
+  }
 `;
 
-let Action = styled(motion.div)`
+let Action = styled(motion.a)`
   background-color: #27333a;
   padding-left: 20px;
   padding-right: 20px;
@@ -92,6 +126,12 @@ let Action = styled(motion.div)`
   width: 50%;
   text-transform: uppercase;
   cursor: pointer;
+  color: var(--white);
+
+  @media (max-width: 800px) {
+    width: 100%;
+    justify-self: center;
+  }
 `;
 
 const FramerButton = ({ children }) => {
@@ -101,8 +141,9 @@ const FramerButton = ({ children }) => {
       exit={{ borderRadius: "8px" }}
       transition={{ ease: "easeOut", duration: 0.4 }}
       whileHover={{
-        backgroundColor: "#50B04E",
+        backgroundColor: "var(--green)",
         borderRadius: "30px",
+        color: "var(--dark)",
       }}
     >
       {children}
@@ -110,11 +151,27 @@ const FramerButton = ({ children }) => {
   );
 };
 
-const Section = ({ number, image, subtitle, title, description, action }) => {
+const Section = ({
+  number,
+  image,
+  subtitle,
+  title,
+  description,
+  action,
+  // setShowModal,
+}) => {
   return (
     <Container>
       <TextBox>
-        <Number>{number}</Number>
+        <NumberContainer
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <motion.div variants={numberVariants}>
+            <Number>{number}</Number>
+          </motion.div>
+        </NumberContainer>
         <Subtitle>{subtitle}</Subtitle>
         <Title>{title}</Title>
         <Description>{description}</Description>
@@ -126,7 +183,7 @@ const Section = ({ number, image, subtitle, title, description, action }) => {
         viewport={{ once: true, amount: 0.8 }}
       >
         <motion.div variants={imageVariants}>
-          <img src={image} alt=""></img>
+          <img src={image} alt="" style={{ borderRadius: "30px" }}></img>
         </motion.div>
       </ImageContainer>
     </Container>

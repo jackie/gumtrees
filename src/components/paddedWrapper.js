@@ -2,7 +2,6 @@ import * as React from "react";
 import styled from "styled-components";
 
 let Container = styled.div`
-  background: #0b1d26;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,7 +17,7 @@ const PaddedWrapper = ({ children }) => {
     <Container>
       <Content>{children}</Content>
     </Container>
-  )
-}
+  );
+};
 
-export default PaddedWrapper
+export default PaddedWrapper;
