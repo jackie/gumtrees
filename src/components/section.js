@@ -3,6 +3,21 @@ import styled from "styled-components";
 import "../assets/styles/global.css";
 import { motion } from "framer-motion";
 
+const imageVariants = {
+  offscreen: {
+    y: -30,
+    opacity: 0
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "easeIn",
+      duration: 0.8
+    }
+  }
+};
+
 let Container = styled.div`
   background: #0b1d26;
   display: flex;
@@ -28,7 +43,7 @@ let Number = styled.div`
   transform: translateX(-50%) translateY(-50%);
 `;
 
-let Image = styled.img`
+let ImageContainer = styled(motion.div)`
   width: 45%;
   height: 45em;
   position: relative;
@@ -105,7 +120,15 @@ const Section = ({ number, image, subtitle, title, description, action }) => {
         <Description>{description}</Description>
         <FramerButton>{action}</FramerButton>
       </TextBox>
-      <Image src={image}></Image>
+      <ImageContainer
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+      >
+        <motion.div variants={imageVariants}>
+          <img src={image} alt=""></img>
+        </motion.div>
+      </ImageContainer>
     </Container>
   );
 };
