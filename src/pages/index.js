@@ -6,17 +6,44 @@ import Section from "../components/section";
 import couple from "../assets/images/jackie-chris.png";
 import polperro from "../assets/images/polperro.png";
 import accommodation from "../assets/images/accommodation.png";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  onscreen: {
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.3,
+    }
+  },
+  offscreen: {
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    }
+  }
+};
+
+const variants = {
+  onscreen: {
+    y: 0,
+    opacity: 1,
+  },
+  offscreen: {
+    y: 50,
+    opacity: 0,
+  }
+};
 
 let Header = styled.div``;
 
-let IntroTitle = styled.div`
+let IntroTitle = styled(motion.div)`
   font-size: 1em;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   margin-bottom: 20px;
 `;
 
-let Title = styled.h1`
+let Title = styled(motion.h1)`
   text-align: center;
   font-size: 5.5em;
   font-weight: 500;
@@ -24,18 +51,18 @@ let Title = styled.h1`
   margin-bottom: 30px;
 `;
 
-let Subtitle = styled.h2`
+let Subtitle = styled(motion.h2)`
   font-size: 3.625em;
   font-weight: 500;
   margin-top: 20px;
 `;
 
-let FollowUp = styled.div`
+let FollowUp = styled(motion.div)`
   opacity: 0.4;
   margin-top: 40px;
 `;
 
-let Content = styled.div`
+let Content = styled(motion.div)`
   background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 90%);
   height: 100vh;
   width: 100vw;
@@ -51,13 +78,17 @@ let Content = styled.div`
 const HeaderSection = () => {
   return (
     <Header>
-      <Content>
-        <IntroTitle>
+      <Content
+        initial="offscreen"
+        whileInView="onscreen"
+        variants={containerVariants}
+      >
+        <IntroTitle variants={variants}>
           Jackie &amp; Chris
           <br />
           Invite you to join them
         </IntroTitle>
-        <Title>Beneath the Gum Trees</Title>
+        <Title variants={variants}>Beneath the Gum Trees</Title>
         <svg
           width="600"
           height="54"
@@ -72,8 +103,8 @@ const HeaderSection = () => {
             fill="#50B04E"
           />
         </svg>
-        <Subtitle>February 3, 2023</Subtitle>
-        <FollowUp>Formal invitations to follow</FollowUp>
+        <Subtitle variants={variants}>February 3, 2023</Subtitle>
+        <FollowUp variants={variants}>Formal invitations to follow</FollowUp>
       </Content>
     </Header>
   );
