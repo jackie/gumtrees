@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
+import "../assets/styles/global.css";
+import { motion } from "framer-motion";
 
 let Container = styled.div`
   background: #0b1d26;
@@ -34,7 +36,7 @@ let Image = styled.img`
 `;
 
 let Subtitle = styled.div`
-  color: #549353;
+  color: #50b04e;
   font-size: 1.125em;
   text-transform: uppercase;
   letter-spacing: 0.5em;
@@ -43,6 +45,8 @@ let Subtitle = styled.div`
 let Title = styled.div`
   font-family: Queens;
   font-size: 4em;
+  line-height: 1.2em;
+  margin-bottom: 20px;
 `;
 
 let Description = styled.div`
@@ -50,10 +54,7 @@ let Description = styled.div`
   flex-shrink: 3;
   font-weight: 300;
   letter-spacing: 0.03em;
-`;
-
-let Action = styled.div`
-  color: #549353;
+  margin-bottom: 20px;
 `;
 
 let TextBox = styled.div`
@@ -64,6 +65,36 @@ let TextBox = styled.div`
   justify-self: flex-end;
 `;
 
+let Action = styled(motion.div)`
+  background-color: #27333a;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  font-size: 0.825em;
+  letter-spacing: 0.05em;
+  width: 50%;
+  text-transform: uppercase;
+  cursor: pointer;
+`;
+
+const FramerButton = ({ children }) => {
+  return (
+    <Action
+      initial={{ borderRadius: "8px" }}
+      exit={{ borderRadius: "8px" }}
+      transition={{ ease: "easeOut", duration: 0.4 }}
+      whileHover={{
+        backgroundColor: "#50B04E",
+        borderRadius: "30px",
+      }}
+    >
+      {children}
+    </Action>
+  );
+};
+
 const Section = ({ number, image, subtitle, title, description, action }) => {
   return (
     <Container>
@@ -72,7 +103,7 @@ const Section = ({ number, image, subtitle, title, description, action }) => {
         <Subtitle>{subtitle}</Subtitle>
         <Title>{title}</Title>
         <Description>{description}</Description>
-        <Action>{action}</Action>
+        <FramerButton>{action}</FramerButton>
       </TextBox>
       <Image src={image}></Image>
     </Container>

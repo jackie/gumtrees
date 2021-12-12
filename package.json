@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.2",
+    "framer-motion": "^5.4.5",
     "gatsby": "^4.3.0",
     "gatsby-plugin-google-analytics": "^4.3.0",
     "gatsby-plugin-styled-components": "^5.3.0",

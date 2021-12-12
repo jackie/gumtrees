@@ -4,10 +4,8 @@ import background from "../assets/images/header.jpg";
 import Nav from "./nav";
 
 const Wrapper = styled.div`
-  background-image: url(${background});
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  background: url(${background}) no-repeat bottom center/cover;
+  height: 100vh;
   position: relative;
 
   &:before {
@@ -18,12 +16,13 @@ const Wrapper = styled.div`
       rgba(11, 29, 38, 0) 31.06%,
       #0b1d26 108.93%
     );
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -34,7 +33,7 @@ const Content = styled.div`
 const Layout = ({ children }) => {
   return (
     <Wrapper>
-      <Nav />
+      <Nav>Date</Nav>
       <Content>{children}</Content>
     </Wrapper>
   );
