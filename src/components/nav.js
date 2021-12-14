@@ -21,7 +21,23 @@ let Menu = styled.div`
   display: flex;
 `;
 
-let Items = styled.div`
+let ItemText = styled.span`
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    border-bottom: 3px solid transparent;
+    transform: translateY(10px);
+    transition: transform ease .5s, border-color ease .5s;
+  }
+`;
+
+let Item = styled.a`
   font-size: 0.825em;
   font-weight: 400;
   letter-spacing: 0.1em;
@@ -30,6 +46,11 @@ let Items = styled.div`
   padding: 5px 20px;
   border-radius: 999px;
   text-transform: uppercase;
+
+  &:hover ${ItemText}:after {
+    transform: translateY(0);
+    border-bottom-color: var(--green);
+  }
 `;
 
 export default function Nav() {
@@ -90,10 +111,10 @@ export default function Nav() {
         />
       </svg>
       <Menu>
-        <Items href="#home">Home</Items>
-        <Items href="/date">Date</Items>
-        <Items href="/venue">Venue</Items>
-        <Items href="#location">Location</Items>
+        <Item href="/"><ItemText>Home</ItemText></Item>
+        <Item href="/date"><ItemText>Date</ItemText></Item>
+        <Item href="/venue"><ItemText>Venue</ItemText></Item>
+        <Item href="/location"><ItemText>Location</ItemText></Item>
       </Menu>
     </Navigation>
   );
