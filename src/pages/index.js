@@ -12,18 +12,18 @@ import Lottie from "react-lottie";
 import * as animationData from "../animations/scrollDown.json";
 
 const containerVariants = {
-  offscreen: {
-    y: 60,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "easeInOut",
-      duration: 1.6,
-    },
-  },
+  // offscreen: {
+  //   y: 60,
+  //   opacity: 0,
+  // },
+  // onscreen: {
+  //   y: 0,
+  //   opacity: 1,
+  //   transition: {
+  //     type: "easeInOut",
+  //     duration: 1.6,
+  //   },
+  // },
 };
 
 const variants = {
