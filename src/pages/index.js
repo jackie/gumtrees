@@ -12,10 +12,6 @@ import Lottie from "react-lottie";
 import * as animationData from "../animations/scrollDown.json";
 
 const containerVariants = {
-  // offscreen: {
-  //   y: 60,
-  //   opacity: 0,
-  // },
   onscreen: {
     transition: {
       staggerChildren: 0.05,
@@ -135,12 +131,11 @@ const HeaderSection = () => {
 };
 
 const IndexPage = () => {
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      {" "}
-      {/* <Modal showModal={showModal} setShowModal={setShowModal} /> */}
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <HeaderSection />
       <PaddedWrapper>
         <Section
@@ -148,7 +143,13 @@ const IndexPage = () => {
           subtitle="the date"
           title="February 3, 2023"
           description="Which ever way you say it, 2/3/23 or 3/2/23?, one thing is for sure, it’s summer in Australia. So bring your bathers, sunscreen and hats and be ready to slip slop slap, because we are going to kick off 2023 like nothing else."
-          action="Add to Calendar"
+          action={{
+            onClick: (e) => {
+              e.preventDefault();
+              return setShowModal(!showModal);
+            },
+            title: "Add to calendar",
+          }}
           image={couple}
         />
         <Section
@@ -156,7 +157,7 @@ const IndexPage = () => {
           subtitle="the venue"
           title="Polperro Winery"
           description="Polperro Vineyard Dining is nestled among the vines and shaded by ancient Angophora Myrtaceae, Polperro is a stunning 25 acre property in Red Hill, the heart of the renown wine region – the Mornington Peninsula."
-          action="Polperro"
+          action={{ url: "/venue", title: "Polperro" }}
           image={polperro}
         />
         <Section
@@ -165,7 +166,7 @@ const IndexPage = () => {
           title="Mornington Peninsula"
           description="A scenic 45 minutes (ish) drive from Melbourne.
           Situated south-east of Melbourne, Mornington Peninsula is a region filled with golden beaches, hot springs, boutique wineries, stunning clifftop walks and some pretty amazing food too."
-          action="Location"
+          action={{ url: "/location", title: "Location" }}
           image={location}
         />
       </PaddedWrapper>

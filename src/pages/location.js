@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../components/modal";
 import styled from "styled-components";
 import "../assets/styles/global.css";
 import LocationSection from "../components/locationSection";
-import couple from "../assets/images/jackie-chris.jpg";
-import polperro from "../assets/images/polperro.jpg";
-import location from "../assets/images/location.jpg";
 import Georges from "../assets/images/accomodations/Georges.jpg";
 import HartsFarm from "../assets/images/accomodations/HartsFarm.jpg";
 import HavenRedHill from "../assets/images/accomodations/HavenRedHill.jpg";
@@ -33,16 +31,10 @@ import SculpturePark from "../assets/images/todo/SculpturePark.jpg";
 import { motion } from "framer-motion";
 
 const containerVariants = {
-  offscreen: {
-    y: 60,
-    opacity: 0,
-  },
   onscreen: {
-    y: 0,
-    opacity: 1,
     transition: {
-      type: "easeInOut",
-      duration: 1.6,
+      staggerChildren: 0.05,
+      delayChildren: 0,
     },
   },
 };
@@ -220,48 +212,51 @@ const HeaderSection = () => {
 };
 
 const Location = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <HeaderSection />
       <LocationHeading> Accomodations</LocationHeading>
       <Container>
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="2 min from Polperro"
           title="Prot Phillip Estate"
           image={PortPhillipEstate}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="9 min from Polperro"
           title="Harts Farm"
           image={HartsFarm}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="4 min from Polperro"
           title="Havent Hill"
           image={HavenRedHill}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="3 min from Polperro"
           title="Red Hill Farm"
           image={RedHillFarm}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="8 min from Polperro"
           title="Quattro Hotel"
           image={Quattro}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="11 min from Polperro"
           title="George's on Arthur's"
           image={Georges}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="7 min from Polperro"
           title="Jackalope Hotel"
           image={Jackalope}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="8 min from Polperro"
           title="The Cabin @ Red Hill"
           image={TheCabin}
         />
@@ -269,42 +264,42 @@ const Location = () => {
       <LocationHeading> Cellar Door’s & Restaurants</LocationHeading>
       <Container>
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="6 min from Polperro"
           title="Montalto"
           image={Montalto}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="11 min from Polperro"
           title="Main Ridge"
           image={MainRidge}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="8 min from Polperro"
           title="Ten Minutes by Traktor"
           image={TenMinutes}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="6 min from Polperro"
           title="Foxey's Hangout"
           image={Foxeys}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="5 min from Polperro"
           title="Red Hill Estate"
           image={RedHillEstate}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="8 min from Polperro"
           title="T'Gallent"
           image={TGallent}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="8 min from Polperro"
           title="Quealy "
           image={Quealy}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="8 min from Polperro"
           title="Pt. Leo Estate"
           image={PtLeo}
         />
@@ -312,42 +307,42 @@ const Location = () => {
       <LocationHeading> Things to do</LocationHeading>
       <Container>
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="23 min from Polperro"
           title="Pennisula Hot Springs"
           image={HotSprings}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="36 min from Polperro"
           title="Portsea Pub"
           image={Portsea}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="33 min from Polperro"
           title="Sorrento rock pools"
           image={Sorrento}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="18 min from Polperro"
           title="Mt Martha Beach Boxes"
           image={BeachBox}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="7 min from Polperro"
           title="Ashcombe Maze"
           image={Maze}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="22 min from Polperro"
           title="Capee Shank Lighthouse"
           image={CapeShank}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="25 min from Polperro"
           title="Gunnamatta Twilight Ride"
           image={Horse}
         />
         <LocationSection
-          subtitle="7mins to Polperro"
+          subtitle="26 min from Polperro"
           title="McClelland Sculpture Park"
           image={SculpturePark}
         />

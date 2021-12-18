@@ -29,6 +29,7 @@ const numberVariants = {
     transition: {
       type: "easeInOut",
       duration: 0.8,
+      delay: 0.4,
     },
   },
 };
@@ -134,19 +135,20 @@ let Action = styled(motion.a)`
   }
 `;
 
-const FramerButton = ({ children }) => {
+const FramerButton = ({ action }) => {
   return (
     <Action
+      href={action.url ? action.url : "#"}
+      onClick={action.onClick ? action.onClick : () => false}
       initial={{ borderRadius: "8px" }}
       exit={{ borderRadius: "8px" }}
       transition={{ ease: "easeOut", duration: 0.4 }}
       whileHover={{
         backgroundColor: "var(--green)",
         borderRadius: "30px",
-        color: "var(--dark)",
       }}
     >
-      {children}
+      {action.title}
     </Action>
   );
 };
@@ -175,7 +177,7 @@ const Section = ({
         <Subtitle>{subtitle}</Subtitle>
         <Title>{title}</Title>
         <Description>{description}</Description>
-        <FramerButton>{action}</FramerButton>
+        <FramerButton action={action} />
       </TextBox>
       <ImageContainer
         initial="offscreen"
