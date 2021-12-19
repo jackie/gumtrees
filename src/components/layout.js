@@ -4,7 +4,8 @@ import homeHeader from "../assets/images/header.jpg";
 import locationHeader from "../assets/images/header-location.jpg";
 import venueHeader from "../assets/images/header-venue.jpg";
 import Nav from "./nav";
-import PaddedWrapper from "../components/paddedWrapper";
+
+import "../assets/styles/global.css";
 
 const Wrapper = styled.div`
   background: none no-repeat bottom center/cover;
@@ -140,7 +141,7 @@ const Layout = ({ location, children }) => {
               fill="white"
             />
           </svg>
-          <FooterText> Below the Blue Gums - Jackie & Chris 2023</FooterText>
+          <FooterText> Below the Blue Gums - Jackie &amp; Chris 2023</FooterText>
         </FooterLogo>
         <FooterLinks>
           <Item href="/">

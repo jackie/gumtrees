@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import "../assets/styles/global.css";
 import PaddedWrapper from "../components/paddedWrapper";
 import Section from "../components/section";
 import couple from "../assets/images/jackie-chris.jpg";

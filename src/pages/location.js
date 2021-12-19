@@ -1,32 +1,7 @@
 import React, { useState } from "react";
 import Modal from "../components/modal";
 import styled from "styled-components";
-import "../assets/styles/global.css";
-import LocationSection from "../components/locationSection";
-import Georges from "../assets/images/accomodations/Georges.jpg";
-import HartsFarm from "../assets/images/accomodations/HartsFarm.jpg";
-import HavenRedHill from "../assets/images/accomodations/HavenRedHill.jpg";
-import Jackalope from "../assets/images/accomodations/Jackalope.jpg";
-import PortPhillipEstate from "../assets/images/accomodations/PortPhillipEstate.jpg";
-import Quattro from "../assets/images/accomodations/Quattro.jpg";
-import RedHillFarm from "../assets/images/accomodations/RedHillFarm.jpg";
-import TheCabin from "../assets/images/accomodations/TheCabin.jpg";
-import Foxeys from "../assets/images/wineries/Foxeys.jpg";
-import MainRidge from "../assets/images/wineries/MainRidge.jpg";
-import Montalto from "../assets/images/wineries/Montalto.jpg";
-import PtLeo from "../assets/images/wineries/PtLeo.jpg";
-import Quealy from "../assets/images/wineries/Quealy.jpg";
-import RedHillEstate from "../assets/images/wineries/RedHillEstate.jpg";
-import TenMinutes from "../assets/images/wineries/TenMinutes.jpg";
-import TGallent from "../assets/images/wineries/TGallent.jpg";
-import Portsea from "../assets/images/todo/Portsea.jpg";
-import Sorrento from "../assets/images/todo/Sorrento.jpg";
-import Maze from "../assets/images/todo/Maze.jpg";
-import Horse from "../assets/images/todo/Horse.jpg";
-import CapeShank from "../assets/images/todo/CapeShank.jpg";
-import BeachBox from "../assets/images/todo/BeachBox.jpg";
-import HotSprings from "../assets/images/todo/HotSprings.jpg";
-import SculpturePark from "../assets/images/todo/SculpturePark.jpg";
+import Contents from "./location/contents";
 
 import { motion } from "framer-motion";
 
@@ -91,36 +66,6 @@ let Content = styled(motion.div)`
   justify-content: center;
   text-align: center;
   color: var(--white);
-`;
-
-let LocationHeading = styled.div`
-  font-family: Queens;
-  font-size: 2.2em;
-  line-height: 1.2em;
-  display: flex;
-  flex-direction: row;
-  max-width: 1320px;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 4em;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-let Container = styled.div`
-  flex-wrap: wrap;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1320px;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-  margin-bottom: 72px;
-  margin-left: auto;
-  margin-right: auto;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 70px;
 `;
 
 const HeaderSection = () => {
@@ -209,6 +154,7 @@ const HeaderSection = () => {
           />
         </svg>
       </Content>
+      <Contents />
     </Header>
   );
 };
@@ -220,135 +166,7 @@ const Location = () => {
     <>
       <Modal showModal={showModal} setShowModal={setShowModal} />
       <HeaderSection />
-      <LocationHeading> Accomodations</LocationHeading>
-      <Container>
-        <LocationSection
-          subtitle="2 min from Polperro"
-          title="Prot Phillip Estate"
-          image={PortPhillipEstate}
-        />
-        <LocationSection
-          subtitle="9 min from Polperro"
-          title="Harts Farm"
-          image={HartsFarm}
-        />
-        <LocationSection
-          subtitle="4 min from Polperro"
-          title="Havent Hill"
-          image={HavenRedHill}
-        />
-        <LocationSection
-          subtitle="3 min from Polperro"
-          title="Red Hill Farm"
-          image={RedHillFarm}
-        />
-        <LocationSection
-          subtitle="8 min from Polperro"
-          title="Quattro Hotel"
-          image={Quattro}
-        />
-        <LocationSection
-          subtitle="11 min from Polperro"
-          title="George's on Arthur's"
-          image={Georges}
-        />
-        <LocationSection
-          subtitle="7 min from Polperro"
-          title="Jackalope Hotel"
-          image={Jackalope}
-        />
-        <LocationSection
-          subtitle="8 min from Polperro"
-          title="The Cabin @ Red Hill"
-          image={TheCabin}
-        />
-      </Container>
-      <LocationHeading> Cellar Door’s & Restaurants</LocationHeading>
-      <Container>
-        <LocationSection
-          subtitle="6 min from Polperro"
-          title="Montalto"
-          image={Montalto}
-        />
-        <LocationSection
-          subtitle="11 min from Polperro"
-          title="Main Ridge"
-          image={MainRidge}
-        />
-        <LocationSection
-          subtitle="8 min from Polperro"
-          title="Ten Minutes by Traktor"
-          image={TenMinutes}
-        />
-        <LocationSection
-          subtitle="6 min from Polperro"
-          title="Foxey's Hangout"
-          image={Foxeys}
-        />
-        <LocationSection
-          subtitle="5 min from Polperro"
-          title="Red Hill Estate"
-          image={RedHillEstate}
-        />
-        <LocationSection
-          subtitle="8 min from Polperro"
-          title="T'Gallent"
-          image={TGallent}
-        />
-        <LocationSection
-          subtitle="8 min from Polperro"
-          title="Quealy "
-          image={Quealy}
-        />
-        <LocationSection
-          subtitle="8 min from Polperro"
-          title="Pt. Leo Estate"
-          image={PtLeo}
-        />
-      </Container>
-      <LocationHeading> Things to do</LocationHeading>
-      <Container>
-        <LocationSection
-          subtitle="23 min from Polperro"
-          title="Pennisula Hot Springs"
-          image={HotSprings}
-        />
-        <LocationSection
-          subtitle="36 min from Polperro"
-          title="Portsea Pub"
-          image={Portsea}
-        />
-        <LocationSection
-          subtitle="33 min from Polperro"
-          title="Sorrento rock pools"
-          image={Sorrento}
-        />
-        <LocationSection
-          subtitle="18 min from Polperro"
-          title="Mt Martha Beach Boxes"
-          image={BeachBox}
-        />
-        <LocationSection
-          subtitle="7 min from Polperro"
-          title="Ashcombe Maze"
-          image={Maze}
-        />
-        <LocationSection
-          subtitle="22 min from Polperro"
-          title="Capee Shank Lighthouse"
-          image={CapeShank}
-        />
-        <LocationSection
-          subtitle="25 min from Polperro"
-          title="Gunnamatta Twilight Ride"
-          image={Horse}
-        />
-        <LocationSection
-          subtitle="26 min from Polperro"
-          title="McClelland Sculpture Park"
-          image={SculpturePark}
-        />
-      </Container>
+      
     </>
   );
 };

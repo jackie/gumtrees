@@ -1,7 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
-import "../assets/styles/global.css";
 import { IoMdStopwatch } from "@react-icons/all-files/io/IoMdStopwatch";
+
+const openSpring = { type: "spring", stiffness: 200, damping: 30 };
+const closeSpring = { type: "spring", stiffness: 300, damping: 35 };
 
 let ImageContainer = styled.div`
   display: flex;
@@ -19,6 +21,7 @@ let Subtitle = styled.div`
 `;
 
 let Title = styled.div`
+  color: var(--white);
   font-family: Queens;
   font-size: 1.2em;
   line-height: 1.2em;
@@ -48,7 +51,7 @@ let StyledIcon = styled(IoMdStopwatch)`
   opacity: 0.3;
 `;
 
-let Container = styled.div`
+let Container = styled.a`
   background: var(--dark);
   display: flex;
   flex-direction: column;
@@ -80,9 +83,9 @@ let Container = styled.div`
   }
 `;
 
-const LocationSection = ({ image, subtitle, title }) => {
+const LocationSection = ({ id, image, subtitle, title }) => {
   return (
-    <Container>
+    <Container href={id}>
       <ImageContainer>
         <img src={image} alt="" style={{ borderRadius: "10px" }}></img>
       </ImageContainer>

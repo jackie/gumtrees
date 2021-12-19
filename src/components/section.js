@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import "../assets/styles/global.css";
 import { motion } from "framer-motion";
 
 const imageVariants = {

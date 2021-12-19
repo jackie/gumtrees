@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Modal from "../components/modal";
 import styled from "styled-components";
-import "../assets/styles/global.css";
-import LocationSection from "../components/locationSection";
+import LocationSection from "./location/section";
 import Georges from "../assets/images/accomodations/Georges.jpg";
 import HartsFarm from "../assets/images/accomodations/HartsFarm.jpg";
 import HavenRedHill from "../assets/images/accomodations/HavenRedHill.jpg";
