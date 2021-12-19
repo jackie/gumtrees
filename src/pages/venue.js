@@ -132,13 +132,13 @@ const HeaderSection = () => {
         variants={containerVariants}
       >
         <HeaderText>
-          <Subtitle variants={variants}>Mornginton Pennisula</Subtitle>
+          <Subtitle variants={variants}>Polperro Winery</Subtitle>
           <Description variants={variants}>
-            A scenic 45 minutes (ish) drive from Melbourne. Situated south-east
-            of Melbourne, Mornington Peninsula is a boot-shaped region filled
-            with golden beaches, bubbling hot springs, boutique wineries, a
-            stunning clifftop walk known as the Millionaire’s Walk and some
-            pretty amazing food too.
+            The Hecker Guthrie designed vineyard dining room, offers an intimate
+            and stylish space, with views over the Talland Hill vineyard.
+            Polperro is carefully attended to by Sam Coverdale, Brent Osbourne
+            Assistant Winemaker and their team on the Mornington Peninsula,
+            using a mix of organic and biodynamic principles.
           </Description>
         </HeaderText>
         <svg
@@ -213,7 +213,7 @@ const HeaderSection = () => {
   );
 };
 
-const Location = () => {
+const Venue = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -353,4 +353,4 @@ const Location = () => {
   );
 };
 
-export default Location;
+export default Venue;

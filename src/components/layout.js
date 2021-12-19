@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import homeHeader from "../assets/images/header.jpg";
 import locationHeader from "../assets/images/header-location.jpg";
+import venueHeader from "../assets/images/header-venue.jpg";
 import Nav from "./nav";
 import PaddedWrapper from "../components/paddedWrapper";
 
@@ -83,13 +84,15 @@ const FooterText = styled.div`
   font-size: 0.875em;
   color: var(--white);
   opacity: 0.3;
-  margin-bottom: 100px;
+  margin-bottom: 105px;
 `;
 
 const headerImage = (route) => {
   switch (route) {
     case "location":
       return locationHeader;
+    case "venue":
+      return venueHeader;
     default:
       return homeHeader;
   }
@@ -141,11 +144,9 @@ const Layout = ({ location, children }) => {
         </FooterLogo>
         <FooterLinks>
           <Item href="/">
-            <ItemText>Home</ItemText>
+            <ItemText>Save the date</ItemText>
           </Item>
-          <Item href="/date">
-            <ItemText>Date</ItemText>
-          </Item>
+
           <Item href="/venue">
             <ItemText>Venue</ItemText>
           </Item>
