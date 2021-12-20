@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Modal from "../../components/modal";
 import styled from "styled-components";
 import LocationSection from "./section";
 import Georges from "../../assets/images/accomodations/Georges.jpg";
@@ -43,14 +42,13 @@ let LocationHeading = styled.div`
 `;
 
 let Container = styled.div`
-  flex-wrap: wrap;
-  display: flex;
+  grid-gap: 30px;
+  display: grid;
   flex-direction: row;
   width: 100%;
   max-width: 1320px;
   align-items: center;
   justify-content: space-between;
-  margin-top: 30px;
   margin-bottom: 72px;
   margin-left: auto;
   margin-right: auto;
@@ -63,13 +61,13 @@ const accomLocations = [
     id: "ppe",
     title: "Port Phillip Estate",
     subtitle: "2 min from Polperro",
-    image: PortPhillipEstate
+    image: PortPhillipEstate,
   },
   {
     id: "harts",
     subtitle: "9 min from Polperro",
     title: "Harts Farm",
-     image: HartsFarm,
+    image: HartsFarm,
   },
   {
     id: "hh",
@@ -153,11 +151,11 @@ const cellarLocations = [
     image: Quealy,
   },
   {
-    id: "quealy",
+    id: "ptleo",
     subtitle: "8 min from Polperro",
     title: "Pt. Leo Estate",
     image: PtLeo,
-  }
+  },
 ];
 
 const thingsLocations = [
@@ -211,51 +209,51 @@ const thingsLocations = [
   },
 ];
 
-const List = ({ match, history, list }) => (
-  <>
-    {list?.map(location => (
-      <LocationSection
-        key={location.id}
-        isSelected={match?.params.id === location.id}
-        history={history}
-        {...location}
-      />
-    ))}
-  </>
-);
-
+const List = ({ list, activeSection, setActiveSection }) => {
+  return (
+    <>
+      {list?.map((location) => {
+        console.log(activeSection, activeSection === location.id);
+        return (
+          <LocationSection
+            key={location.id}
+            isSelected={activeSection === location.id}
+            setActiveSection={setActiveSection}
+            {...location}
+          />
+        );
+      })}
+    </>
+  );
+};
 const Location = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [activeSection, setActiveSection] = useState(false);
 
   return (
     <>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
       <LocationHeading>Accomodations</LocationHeading>
       <Container>
-        <Router>
-          <Routes>
-            <Route path="/location/:id" element={<List list={accomLocations} />} />
-            <Route path="/location" element={<List list={accomLocations} />} />
-          </Routes>
-        </Router>
+        <List
+          list={accomLocations}
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
       </Container>
       <LocationHeading>Cellar Doors &amp; Restaurants</LocationHeading>
       <Container>
-        <Router>
-          <Routes>
-            <Route path="/location/:id" element={<List list={cellarLocations} />} />
-            <Route path="/location" element={<List list={cellarLocations} />} />
-          </Routes>
-        </Router>
+        <List
+          list={cellarLocations}
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
       </Container>
       <LocationHeading>Things to do</LocationHeading>
       <Container>
-        <Router>
-          <Routes>
-            <Route path="/location/:id" element={<List list={thingsLocations} />} />
-            <Route path="/location" element={<List list={thingsLocations} />} />
-          </Routes>
-        </Router>
+        <List
+          list={thingsLocations}
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
       </Container>
     </>
   );

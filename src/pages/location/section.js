@@ -1,16 +1,15 @@
-import * as React from "react";
+import React from "react";
 import styled from "styled-components";
 import { IoMdStopwatch } from "@react-icons/all-files/io/IoMdStopwatch";
+import { motion } from "framer-motion";
 
-const openSpring = { type: "spring", stiffness: 200, damping: 30 };
-const closeSpring = { type: "spring", stiffness: 300, damping: 35 };
-
-let ImageContainer = styled.div`
+let Image = styled.img`
   display: flex;
-  max-width: 300px;
-  max-height: 300px;
   justify-self: flex-start;
   margin-bottom: 10px;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: contain;
 `;
 
 let Subtitle = styled.div`
@@ -28,10 +27,9 @@ let Title = styled.div`
   margin-bottom: 5px;
 `;
 
-let TextBox = styled.div`
+let TextBox = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  max-width: 300px;
   justify-self: flex-start;
 `;
 
@@ -51,7 +49,7 @@ let StyledIcon = styled(IoMdStopwatch)`
   opacity: 0.3;
 `;
 
-let Container = styled.a`
+let Container = styled(motion.div)`
   background: var(--dark);
   display: flex;
   flex-direction: column;
@@ -72,7 +70,7 @@ let Container = styled.a`
     transition: 0.3s ease;
   }
 
-  &:hover ${ImageContainer} {
+  &:hover ${Image} {
     opacity: 0.7;
     transition: 0.3s ease;
   }
@@ -82,13 +80,17 @@ let Container = styled.a`
     transition: 0.3s ease;
   }
 `;
-
-const LocationSection = ({ id, image, subtitle, title }) => {
+const LocationSection = ({
+  id,
+  setActiveSection,
+  isSelected,
+  image,
+  subtitle,
+  title,
+}) => {
   return (
-    <Container href={id}>
-      <ImageContainer>
-        <img src={image} alt="" style={{ borderRadius: "10px" }}></img>
-      </ImageContainer>
+    <Container>
+      <Image src={image} alt="" />
       <TextBox>
         <Title>{title}</Title>
         <LocationBox>

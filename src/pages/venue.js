@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const containerVariants = {
   onscreen: {
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.08,
       delayChildren: 0,
     },
   },
@@ -53,7 +53,7 @@ let Title = styled(motion.h2)`
   line-height: 1em;
 `;
 
-let SubTitle = styled.div`
+let SubTitle = styled(motion.div)`
   text-align: center;
   font-size: 1.3em;
   font-weight: 300;
