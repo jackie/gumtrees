@@ -44,12 +44,16 @@ let Item = styled.a`
   flex-direction: column;
   font-size: 0.825em;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.03em;
   color: var(--white);
   margin: 5px;
-  padding: 20px 0 0 0;
+  padding: 10px 0 0 0;
   border-radius: 999px;
-  text-transform: uppercase;
+  text-align: right;
+
+  &:first-child {
+    padding: 0;
+  }
 
   &:hover ${ItemText} {
     transition: 0.3s ease;
@@ -64,28 +68,20 @@ const Footer = styled.div`
   margin-left: auto;
   margin-right: auto;
   justify-content: space-between;
-  margin-top: 120px;
+  padding-top: 60px;
+  padding-bottom: 120px;
 `;
 
 const FooterLinks = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: column;
-  margin-bottom: 100px;
-  text-align: right;
 `;
 
 const FooterLogo = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-`;
-
-const FooterText = styled.div`
-  font-size: 0.875em;
-  color: var(--white);
-  opacity: 0.3;
-  margin-bottom: 105px;
 `;
 
 const headerImage = (route) => {
@@ -141,7 +137,6 @@ const Layout = ({ location, children }) => {
               fill="white"
             />
           </svg>
-          <FooterText> Below the Blue Gums - Jackie &amp; Chris 2023</FooterText>
         </FooterLogo>
         <FooterLinks>
           <Item href="/">
