@@ -14,3 +14,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
 exports.wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>;
 };
+
+exports.shouldUpdateScroll = () => {
+  return false;
+};

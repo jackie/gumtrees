@@ -3,6 +3,7 @@ import HartsFarm from "../../assets/images/accomodations/HartsFarm.jpg";
 import HavenRedHill from "../../assets/images/accomodations/HavenRedHill.jpg";
 import Jackalope from "../../assets/images/accomodations/Jackalope.jpg";
 import PortPhillipEstate from "../../assets/images/accomodations/PortPhillipEstate.jpg";
+import PortPhillipEstateBig from "../../assets/images/accomodations/PortPhillipEstateBig.jpg";
 import Quattro from "../../assets/images/accomodations/Quattro.jpg";
 import RedHillFarm from "../../assets/images/accomodations/RedHillFarm.jpg";
 import TheCabin from "../../assets/images/accomodations/TheCabin.jpg";
@@ -30,6 +31,9 @@ const locations = [
     title: "Port Phillip Estate",
     subtitle: "2 min from Polperro",
     image: PortPhillipEstate,
+    imageBig: PortPhillipEstateBig,
+    description:
+      "A scenic 45 minutes (ish) drive from Melbourne. Situated south-east of Melbourne, Mornington Peninsula is a boot-shaped region filled with golden beaches, bubbling hot springs, boutique wineries, a stunning clifftop walk known as the Millionaire’s Walk and some pretty amazing food too.",
   },
   {
     type: "accom",
@@ -42,7 +46,7 @@ const locations = [
     type: "accom",
     id: "hh",
     subtitle: "4 min from Polperro",
-    title: "Havent Hill",
+    title: "Haven Hill",
     image: HavenRedHill,
   },
   {
@@ -98,7 +102,7 @@ const locations = [
     type: "cellar",
     id: "tenminutes",
     subtitle: "8 min from Polperro",
-    title: "Ten Minutes by Traktor",
+    title: "Ten Minutes by Tractor",
     image: TenMinutes,
   },
   {

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { IoMdStopwatch } from "@react-icons/all-files/io/IoMdStopwatch";
+import PaddedWrapper from "../../components/paddedWrapper";
 import { motion } from "framer-motion";
+import { locations } from "./_data";
 
-import { locations } from "./data";
 const containerVariants = {
   onscreen: {
     transition: {
@@ -28,15 +28,13 @@ const variants = {
   },
 };
 
-let Header = styled.div``;
-
 let Subtitle = styled(motion.h2)`
   font-size: 3.625em;
   font-weight: 500;
   margin-top: 20px;
   text-align: left;
-  width: 45%;
   line-height: 1.2em;
+  margin-bottom: 0.5em;
 `;
 
 let Description = styled(motion.div)`
@@ -46,49 +44,68 @@ let Description = styled(motion.div)`
   letter-spacing: 0.03em;
   color: var(--secondary);
   text-align: left;
-  width: 45%;
-  margin-top: 20px;
 `;
 
 let HeaderText = styled.div`
-  position: absolute;
-  width: 55%;
+  width: 45%;
 `;
 
-let Content = styled(motion.div)`
-  background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 90%);
+let Info = styled(motion.div)`
+  width: 45%;
+`;
+
+let InfoTitle = styled.h3`
+  font-weight: 300;
+`;
+
+let HeaderContent = styled(motion.div)`
   height: 100vh;
   width: 100vw;
+  background-size: cover;
   position: relative;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   color: var(--white);
+  flex-direction: column;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(transparent 0, var(--dark) 60%);
+  }
 `;
 
-let StyledSvg = styled.div`
-  margin-left: 350px;
+let StyledPaddedWrapper = styled(PaddedWrapper)`
+  justify-content: space-between;
+  align-self: flex-end;
+  margin-bottom: 4em;
+  position: relative;
 `;
 
 const LocationSection = ({ id }) => {
-  console.log("dgksjhdgjksdg", id);
   let search = locations.filter((item) => item.id === id)[0];
-  console.log(search);
+  if (!search) return;
   return (
-    <Header>
-      <Content
-        initial="offscreen"
-        whileInView="onscreen"
-        variants={containerVariants}
-      >
+    <HeaderContent
+      initial="offscreen"
+      whileInView="onscreen"
+      variants={containerVariants}
+      style={{ backgroundImage: `url(${search.image})` }}
+    >
+      <StyledPaddedWrapper flexDirection="row">
         <HeaderText>
           <Subtitle variants={variants}>{search.title}</Subtitle>
-          <Description variants={variants}>{search.subtitle}</Description>
+          <Description variants={variants}>{search.description}</Description>
         </HeaderText>
-      </Content>
-    </Header>
+        <Info variants={variants}>
+          <InfoTitle>email</InfoTitle>
+          <InfoTitle>phone number</InfoTitle>
+          <InfoTitle>website</InfoTitle>
+        </Info>
+      </StyledPaddedWrapper>
+    </HeaderContent>
   );
 };
 

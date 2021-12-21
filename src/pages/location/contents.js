@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import LocationSection from "./section";
+import PaddedWrapper from "../../components/paddedWrapper";
 
-import { locations } from "./data";
-import { motion, AnimatePresence } from "framer-motion";
+import { locations } from "./_data";
+import { motion } from "framer-motion";
 
 let LocationHeading = styled.div`
   font-family: Queens;
@@ -14,24 +15,22 @@ let LocationHeading = styled.div`
   max-width: 1320px;
   align-items: center;
   justify-content: space-between;
-  margin-top: 4em;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 1em;
+  align-self: flex-start;
 `;
 
 let Container = styled(motion.div)`
-  grid-gap: 30px;
+  grid-gap: 1.875em;
   display: grid;
   flex-direction: row;
   width: 100%;
-  max-width: 1320px;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 72px;
+  margin-bottom: 5em;
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: repeat(4, 1fr);
-  row-gap: 70px;
+  row-gap: 4.375em;
 `;
 
 const List = ({ list }) => {
@@ -46,7 +45,7 @@ const List = ({ list }) => {
 
 const Location = () => {
   return (
-    <>
+    <PaddedWrapper>
       <LocationHeading>Accomodations</LocationHeading>
       <Container variants={{ exit: { transition: { staggerChildren: 1 } } }}>
         <List
@@ -68,7 +67,7 @@ const Location = () => {
           list={locations.filter((location) => location.type === "things")}
         />
       </Container>
-    </>
+    </PaddedWrapper>
   );
 };
 
