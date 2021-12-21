@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { IoMdStopwatch } from "@react-icons/all-files/io/IoMdStopwatch";
 import { motion } from "framer-motion";
+import { Link } from "gatsby";
 
 let Image = styled.img`
   display: flex;
@@ -80,25 +81,27 @@ let Container = styled(motion.div)`
     transition: 0.3s ease;
   }
 `;
-const LocationSection = ({
-  id,
-  setActiveSection,
-  isSelected,
-  image,
-  subtitle,
-  title,
-}) => {
+
+const exit = {
+  exit: {
+    opacity: 0,
+  },
+};
+
+const LocationSection = ({ id, key, image, subtitle, title }) => {
   return (
-    <Container>
-      <Image src={image} alt="" />
-      <TextBox>
-        <Title>{title}</Title>
-        <LocationBox>
-          <StyledIcon />
-          <Subtitle>{subtitle}</Subtitle>
-        </LocationBox>
-      </TextBox>
-    </Container>
+    <Link to={`/location/${id}`} key={`link-${id}`}>
+      <Container key={key} {...exit}>
+        <Image src={image} alt="" />
+        <TextBox>
+          <Title>{title}</Title>
+          <LocationBox>
+            <StyledIcon />
+            <Subtitle>{subtitle}</Subtitle>
+          </LocationBox>
+        </TextBox>
+      </Container>
+    </Link>
   );
 };
 

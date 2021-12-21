@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { motion, useViewportScroll } from "framer-motion";
+import { Link } from "gatsby";
 
 let Navigation = styled(motion.div)`
   display: flex;
@@ -37,7 +38,7 @@ let ItemText = styled.span`
   }
 `;
 
-let Item = styled.a`
+let Item = styled(Link)`
   font-size: 0.825em;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -51,8 +52,6 @@ let Item = styled.a`
     border-bottom-color: var(--green);
   }
 `;
-
-let Button = styled.a``;
 
 export default function Nav() {
   const { scrollY } = useViewportScroll();
@@ -82,10 +81,10 @@ export default function Nav() {
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       <Menu>
-        <Item href="/venue">
+        <Item to="/venue">
           <ItemText>The Venue</ItemText>
         </Item>
-        <Button href="/">
+        <Link to="/">
           <svg
             width="50"
             height="55"
@@ -116,8 +115,8 @@ export default function Nav() {
               fill="white"
             />
           </svg>
-        </Button>
-        <Item href="/location">
+        </Link>
+        <Item to="/location">
           <ItemText>Location</ItemText>
         </Item>
       </Menu>
