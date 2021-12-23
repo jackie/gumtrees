@@ -13,11 +13,12 @@
 }
 
 :root {
-  --dark: #0B1D26;
+  --dark: #0b1d26;
   --secondary: #bdc3c7;
-  --green: #50B04E;
+  --green: #50b04e;
   --darkerGreen: #459b43;
-  --white: #FFFFFF;
+  --white: #ffffff;
+  --site-width: 1320px;
 }
 
 html {
@@ -25,7 +26,6 @@ html {
   color: var(--white);
   background-color: var(--dark);
 }
-
 
 /* Box sizing rules */
 *,

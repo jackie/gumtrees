@@ -1,22 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import theme from "./_theme";
+import PaddedWrapper from "./paddedWrapper";
 
-const FooterWrapper = styled.div`
-  width: 100%;
-  max-width: 1300px;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
+const FooterWrapper = styled(PaddedWrapper)`
+  flex-direction: row;
   justify-content: space-between;
-  padding-top: 60px;
-  padding-bottom: 120px;
+  padding-top: 3.75em;
+  padding-bottom: 7.5em;
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
 `;
 
 const FooterLinks = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    margin-top: 2em;
+  }
 `;
 
 const FooterLogo = styled.div`
@@ -49,6 +58,10 @@ let Item = styled(Link)`
   &:hover ${ItemText} {
     transition: 0.3s ease;
     color: var(--green);
+  }
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    text-align: left;
   }
 `;
 

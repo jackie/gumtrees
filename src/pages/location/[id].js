@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PaddedWrapper from "../../components/paddedWrapper";
 import { motion } from "framer-motion";
 import { locations } from "./_data";
+import theme from "../../components/_theme";
 
 const containerVariants = {
   onscreen: {
@@ -48,10 +49,18 @@ let Description = styled(motion.div)`
 
 let HeaderText = styled.div`
   width: 45%;
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    width: 100%;
+  }
 `;
 
 let Info = styled(motion.div)`
   width: 45%;
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    width: 100%;
+  }
 `;
 
 let InfoTitle = styled.h3`
@@ -75,6 +84,11 @@ let HeaderContent = styled(motion.div)`
     position: absolute;
     background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 90%);
   }
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    height: auto;
+    min-height: 100vh;
+  }
 `;
 
 let StyledPaddedWrapper = styled(PaddedWrapper)`
@@ -82,6 +96,10 @@ let StyledPaddedWrapper = styled(PaddedWrapper)`
   align-self: flex-end;
   margin-bottom: 4em;
   position: relative;
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    flex-direction: column;
+  }
 `;
 
 let Action = styled(motion.a)`
@@ -108,7 +126,10 @@ let Action = styled(motion.a)`
 const FramerButton = () => {
   return (
     <Action
-      href="/location"
+      onClick={(e) => {
+        e.preventDefault();
+        return window.history.back();
+      }}
       initial={{ borderRadius: "30px" }}
       exit={{ borderRadius: "30px" }}
       transition={{ ease: "easeOut", duration: 0.4 }}

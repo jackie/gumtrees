@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import LocationSection from "./section";
 import PaddedWrapper from "../../components/paddedWrapper";
-
+import theme from "../../components/_theme";
 import { locations } from "./_data";
 import { motion } from "framer-motion";
 
@@ -12,7 +12,7 @@ let LocationHeading = styled.div`
   line-height: 1.2em;
   display: flex;
   flex-direction: row;
-  max-width: 1320px;
+  max-width: var(--site-width);
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1em;
@@ -31,6 +31,14 @@ let Container = styled(motion.div)`
   margin-right: auto;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 4.375em;
+
+  @media (max-width: ${theme.breakpoints.medium}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const List = ({ list }) => {

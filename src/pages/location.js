@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Contents from "./location/contents";
 import PaddedWrapper from "../components/paddedWrapper";
-
+import theme from "../components/_theme";
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -49,6 +49,10 @@ let Description = styled(motion.div)`
 
 let HeaderText = styled.div`
   width: 45%;
+
+  @media (max-width: ${theme.breakpoints.small}) {
+    width: 80%;
+  }
 `;
 
 let HeaderContent = styled(motion.div)`
@@ -66,7 +70,11 @@ let StyledPaddedWrapper = styled(PaddedWrapper)`
   align-items: center;
 `;
 
-let StyledSvg = styled.svg``;
+let StyledSvg = styled.svg`
+  @media (max-width: ${theme.breakpoints.small}) {
+    display: none;
+  }
+`;
 
 const Location = ({ params }) => {
   return (

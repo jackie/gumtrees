@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import theme from "./_theme";
 
 const imageVariants = {
   offscreen: {
@@ -8,7 +9,7 @@ const imageVariants = {
     opacity: 0,
   },
   onscreen: {
-    y: 30,
+    y: 0,
     opacity: 1,
     transition: {
       type: "easeInOut",
@@ -41,9 +42,9 @@ let Container = styled.div`
   justify-content: space-between;
   margin: auto auto 12.5em;
 
-  @media (max-width: 800px) {
+  @media (max-width: ${theme.breakpoints.small}) {
     flex-direction: column;
-    margin: 20px;
+    margin-bottom: 10em;
   }
 `;
 
@@ -61,13 +62,13 @@ let Number = styled.div`
 
 let ImageContainer = styled(motion.div)`
   width: 45%;
-  height: 45em;
   position: relative;
   justify-self: flex-start;
 
-  @media (max-width: 800px) {
+  @media (max-width: ${theme.breakpoints.small}) {
     width: 100%;
     justify-self: center;
+    margin-top: 3em;
   }
 `;
 

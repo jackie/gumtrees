@@ -6,7 +6,7 @@ let Container = styled.div`
   align-items: center;
   flex-direction: ${(props) => props.flexDirection};
   width: 100%;
-  max-width: 1320px;
+  max-width: var(--site-width);
   padding: 0 1em;
   margin: auto;
 `;
