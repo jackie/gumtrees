@@ -52,12 +52,6 @@ let Title = styled(motion.h1)`
   margin-bottom: 30px;
 `;
 
-let Subtitle = styled(motion.h2)`
-  font-size: 3.625em;
-  font-weight: 500;
-  margin-top: 20px;
-`;
-
 let FollowUp = styled(motion.div)`
   color: var(--secondary);
   font-weight: 300;
@@ -86,19 +80,6 @@ const defaultOptions = {
   animationData: animationData,
   rendererSettings: {
     preserveAspectRatio: "xMidYMid slice",
-  },
-};
-
-const icon = {
-  hidden: {
-    opacity: 0,
-    pathLength: 0,
-    fill: "rgba(80, 176, 78, 0)",
-  },
-  visible: {
-    opacity: 1,
-    pathLength: 1,
-    fill: "rgba(80, 176, 78, 1)",
   },
 };
 

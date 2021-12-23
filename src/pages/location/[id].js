@@ -73,7 +73,7 @@ let HeaderContent = styled(motion.div)`
     width: 100%;
     height: 100%;
     position: absolute;
-    background: linear-gradient(transparent 0, var(--dark) 60%);
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 90%);
   }
 `;
 
@@ -84,7 +84,45 @@ let StyledPaddedWrapper = styled(PaddedWrapper)`
   position: relative;
 `;
 
-const LocationSection = ({ id }) => {
+let Action = styled(motion.a)`
+  background-color: var(--green);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  font-size: 0.825em;
+  letter-spacing: 0.05em;
+  width: 50%;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--white);
+  align-items: center;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    justify-self: center;
+  }
+`;
+
+const FramerButton = () => {
+  return (
+    <Action
+      href="/location"
+      initial={{ borderRadius: "30px" }}
+      exit={{ borderRadius: "30px" }}
+      transition={{ ease: "easeOut", duration: 0.4 }}
+      whileHover={{
+        backgroundColor: "var(--darkerGreen)",
+        borderRadius: "30px",
+      }}
+    >
+      Back
+    </Action>
+  );
+};
+
+const LocationSection = ({ id, action }) => {
   let search = locations.filter((item) => item.id === id)[0];
   if (!search) return;
   return (
@@ -92,10 +130,11 @@ const LocationSection = ({ id }) => {
       initial="offscreen"
       whileInView="onscreen"
       variants={containerVariants}
-      style={{ backgroundImage: `url(${search.image})` }}
+      style={{ backgroundImage: `url(${search.imageBig})` }}
     >
       <StyledPaddedWrapper flexDirection="row">
         <HeaderText>
+          <FramerButton action={action} />
           <Subtitle variants={variants}>{search.title}</Subtitle>
           <Description variants={variants}>{search.description}</Description>
         </HeaderText>
