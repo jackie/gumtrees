@@ -16,10 +16,13 @@ import TheCabin from "../../assets/images/accomodations/TheCabin.jpg";
 import TheCabinBig from "../../assets/images/accomodations/TheCabinBig.jpg";
 import Foxeys from "../../assets/images/wineries/Foxeys.jpg";
 import MainRidge from "../../assets/images/wineries/MainRidge.jpg";
+import MainRidgeBig from "../../assets/images/wineries/MainRidgeBig.jpg";
 import Montalto from "../../assets/images/wineries/Montalto.jpg";
+import MontaltoBig from "../../assets/images/wineries/MontaltoBig.jpg";
 import PtLeo from "../../assets/images/wineries/PtLeo.jpg";
 import Quealy from "../../assets/images/wineries/Quealy.jpg";
 import RedHillEstate from "../../assets/images/wineries/RedHillEstate.jpg";
+import RedHillEstateBig from "../../assets/images/wineries/RedHillEstateBig.jpg";
 import TenMinutes from "../../assets/images/wineries/TenMinutes.jpg";
 import TGallant from "../../assets/images/wineries/TGallent.jpg";
 import Portsea from "../../assets/images/todo/Portsea.jpg";
@@ -118,7 +121,11 @@ const locations = [
     subtitle: "6 min from Polperro",
     title: "Montalto",
     image: Montalto,
-    imageBig: PortPhillipEstateBig,
+    imageBig: MontaltoBig,
+    tel: "+61359898412",
+    email: "hello@montalto.com.au",
+    website: "https://montalto.com.au/",
+    maps: "https://g.page/montalto-restaurant?share",
     description:
       "A scenic 45 minutes (ish) drive from Melbourne. Situated south-east of Melbourne, Mornington Peninsula is a boot-shaped region filled with golden beaches, bubbling hot springs, boutique wineries, a stunning clifftop walk known as the Millionaire’s Walk and some pretty amazing food too.",
   },
@@ -126,11 +133,15 @@ const locations = [
     type: "cellar",
     id: "mainridge",
     subtitle: "11 min from Polperro",
-    title: "Main Ridge",
+    title: "Main Ridge Estate",
     image: MainRidge,
-    imageBig: PortPhillipEstateBig,
+    imageBig: MainRidgeBig,
+    website: "http://www.mre.com.au/",
+    maps: "https://g.page/MainRidgeEstate?share",
+    tel: "+61359892686",
+    email: "mrestate@mre.com.au",
     description:
-      "A scenic 45 minutes (ish) drive from Melbourne. Situated south-east of Melbourne, Mornington Peninsula is a boot-shaped region filled with golden beaches, bubbling hot springs, boutique wineries, a stunning clifftop walk known as the Millionaire’s Walk and some pretty amazing food too.",
+      "Main Ridge Estate was the first licensed winery on the Mornington Peninsula, and has built a reputation for producing exquisite pinot noir and chardonnay from estate-grown fruit. The iconic vineyard is set in a picturesque bush valley with a mature garden, emphasising the rustic, off-the-beaten-track aesthetic. The brown-bricked estate seamlessly blends in with its lush surroundings and vineyard.",
   },
   {
     type: "cellar",
@@ -158,9 +169,12 @@ const locations = [
     subtitle: "5 min from Polperro",
     title: "Red Hill Estate",
     image: RedHillEstate,
-    imageBig: PortPhillipEstateBig,
+    imageBig: RedHillEstateBig,
+    tel: "+61 3 5989 2838",
+    website: "http://www.redhillestate.com.au/",
+    email: "",
     description:
-      "A scenic 45 minutes (ish) drive from Melbourne. Situated south-east of Melbourne, Mornington Peninsula is a boot-shaped region filled with golden beaches, bubbling hot springs, boutique wineries, a stunning clifftop walk known as the Millionaire’s Walk and some pretty amazing food too.",
+      "Red Hill Estate is a boutique Australian multi-award winning wine producer situated on a stunning property little more than an hour from Melbourne, Australia. Currently encompassing 46 acres with 23 acres under vine, Red Hill Estate boasts one of the best views from any winery in the world and as such has become a much loved tourist destination in it’s own right; renowned, not only for its wines but also for its superb panoramic views of Western Port Bay and its mild maritime climate.",
   },
   {
     type: "cellar",

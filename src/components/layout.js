@@ -3,9 +3,9 @@ import styled from "styled-components";
 import homeHeader from "../assets/images/header.jpg";
 import locationHeader from "../assets/images/header-location.jpg";
 import venueHeader from "../assets/images/header-venue.jpg";
-import Nav from "./nav";
+import Nav from "./layout/nav";
 import { motion } from "framer-motion";
-import Footer from "./footer";
+import Footer from "./layout/footer";
 
 import "../assets/styles/global.css";
 

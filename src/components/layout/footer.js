@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import theme from "./_theme";
-import PaddedWrapper from "./paddedWrapper";
+import PaddedWrapper from "../paddedWrapper";
 
 const FooterWrapper = styled(PaddedWrapper)`
   flex-direction: row;

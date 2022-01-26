@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import LocationSection from "./section";
 import PaddedWrapper from "../../components/paddedWrapper";
-import theme from "../../components/_theme";
+import theme from "../../components/layout/_theme";
 import { locations } from "./_data";
 import { motion } from "framer-motion";
 

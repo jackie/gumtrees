@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { BsChevronRight } from "@react-icons/all-files/bs/BsChevronRight";
 import { BsChevronLeft } from "@react-icons/all-files/bs/BsChevronLeft";
-import theme from "../components/_theme";
 import { motion } from "framer-motion";
 
 const containerVariants = {

@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import Modal from "../components/modal";
 import Lottie from "react-lottie";
 import * as animationData from "../animations/scrollDown.json";
-import theme from "../components/_theme";
+import theme from "../components/layout/_theme";
 
 const containerVariants = {
   onscreen: {
@@ -114,7 +114,7 @@ const HeaderSection = () => {
             <br />
             Invite you to join them
           </IntroTitle>
-          <Title variants={variants}>Beneath the Gum Trees</Title>
+          <Title variants={variants}>Beneath the Blue Gums</Title>
           <DateSvg
             variants={variants}
             viewBox="0 0 600 158"

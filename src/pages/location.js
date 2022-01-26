@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Contents from "./location/contents";
 import PaddedWrapper from "../components/paddedWrapper";
-import theme from "../components/_theme";
+import theme from "../components/layout/_theme";
 import { motion } from "framer-motion";
 
 const containerVariants = {

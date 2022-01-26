@@ -3,7 +3,8 @@ import styled from "styled-components";
 import PaddedWrapper from "../../components/paddedWrapper";
 import { motion } from "framer-motion";
 import { locations } from "./_data";
-import theme from "../../components/_theme";
+import FramerButton from "../../components/button";
+import theme from "../../components/layout/_theme";
 
 const containerVariants = {
   onscreen: {
@@ -63,8 +64,21 @@ let Info = styled(motion.div)`
   }
 `;
 
+let InfoRow = styled.div`
+  margin-bottom: 30px;
+`;
+
 let InfoTitle = styled.h3`
   font-weight: 300;
+`;
+
+let InfoLink = styled.a`
+  color: var(--secondary);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--green);
+  }
 `;
 
 let HeaderContent = styled(motion.div)`
@@ -111,11 +125,12 @@ let Action = styled(motion.a)`
   text-align: center;
   font-size: 0.825em;
   letter-spacing: 0.05em;
-  width: 50%;
   text-transform: uppercase;
   cursor: pointer;
   color: var(--white);
   align-items: center;
+  display: inline-flex;
+  margin-bottom: 30px;
 
   @media (max-width: 800px) {
     width: 100%;
@@ -123,7 +138,7 @@ let Action = styled(motion.a)`
   }
 `;
 
-const FramerButton = () => {
+const BackButton = () => {
   return (
     <Action
       onClick={(e) => {
@@ -138,7 +153,7 @@ const FramerButton = () => {
         borderRadius: "30px",
       }}
     >
-      Back
+      &larr; Back
     </Action>
   );
 };
@@ -155,14 +170,30 @@ const LocationSection = ({ id, action }) => {
     >
       <StyledPaddedWrapper flexDirection="row">
         <HeaderText>
-          <FramerButton action={action} />
+          <BackButton action={action} />
           <Subtitle variants={variants}>{search.title}</Subtitle>
           <Description variants={variants}>{search.description}</Description>
         </HeaderText>
         <Info variants={variants}>
-          <InfoTitle>email</InfoTitle>
-          <InfoTitle>phone number</InfoTitle>
-          <InfoTitle>website</InfoTitle>
+          <InfoRow>
+            <InfoTitle>website</InfoTitle>
+            <InfoLink href={search.website}>{search.website}</InfoLink>
+          </InfoRow>
+          <InfoRow>
+            <InfoTitle>email</InfoTitle>
+            <InfoLink href={`mailto:${search.email}`}>{search.email}</InfoLink>
+          </InfoRow>
+          <InfoRow>
+            <InfoTitle>phone number</InfoTitle>
+            <InfoLink href={`tel:${search.tel}`}>{search.tel}</InfoLink>
+          </InfoRow>
+          <FramerButton
+            action={{
+              url: search.maps,
+              title: "View in Google Maps",
+              target: "_blank",
+            }}
+          />
         </Info>
       </StyledPaddedWrapper>
     </HeaderContent>

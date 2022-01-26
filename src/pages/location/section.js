@@ -90,7 +90,7 @@ const exit = {
 
 const LocationSection = ({ id, key, image, subtitle, title }) => {
   return (
-    <Link to={`/location/${id}`} key={`link-${id}`}>
+    <a href={`/location/${id}`} key={`link-${id}`}>
       <Container key={key} {...exit}>
         <Image src={image} alt="" />
         <TextBox>
@@ -101,7 +101,7 @@ const LocationSection = ({ id, key, image, subtitle, title }) => {
           </LocationBox>
         </TextBox>
       </Container>
-    </Link>
+    </a>
   );
 };
 
