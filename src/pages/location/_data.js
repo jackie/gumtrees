@@ -10,8 +10,8 @@ import PortPhillipEstate from "../../assets/images/accomodations/PortPhillipEsta
 import PortPhillipEstateBig from "../../assets/images/accomodations/PortPhillipEstateBig.jpg";
 import Quattro from "../../assets/images/accomodations/Quattro.jpg";
 import QuattroBig from "../../assets/images/accomodations/QuattroBig.jpg";
-import RedHillFarm from "../../assets/images/accomodations/RedHillFarm.jpg";
-import RedHillFarmBig from "../../assets/images/accomodations/RedHillFarmBig.jpg";
+import RedHillBarn from "../../assets/images/accomodations/RedHillBarn.jpg";
+import RedHillBarnBig from "../../assets/images/accomodations/RedHillBarnBig.jpg";
 import TheCabin from "../../assets/images/accomodations/TheCabin.jpg";
 import TheCabinBig from "../../assets/images/accomodations/TheCabinBig.jpg";
 import Foxeys from "../../assets/images/wineries/Foxeys.jpg";
@@ -37,77 +37,97 @@ import SculpturePark from "../../assets/images/todo/SculpturePark.jpg";
 const locations = [
   {
     type: "accom",
-    id: "ppe",
+    id: "port-phillip-estate",
     title: "Port Phillip Estate",
     subtitle: "2 min from Polperro",
     image: PortPhillipEstate,
     imageBig: PortPhillipEstateBig,
+    website: "http://www.portphillipestate.com.au/",
+    maps: "https://goo.gl/maps/Ho6ZQ7VnRpjdxWph9",
     description:
       "Port Phillip Estate offers unique luxury accommodation on the Mornington Peninsula. The six contemporary designed suites enjoy spectacular vineyard and coastal views, private terraces and interiors that exude the utmost luxury.",
   },
   {
     type: "accom",
-    id: "harts",
+    id: "harts-farm",
     subtitle: "9 min from Polperro",
     title: "Harts Farm",
     image: HartsFarm,
     imageBig: HartsFarmBig,
+    tel: "+61414238158",
+    website: "http://www.hartsfarm.com.au/",
+    maps: "https://goo.gl/maps/61ehBWr1QF5wbYpq9",
     description:
       "Harts Farm aims to provide a simple yet beautiful and sophisticated experience for their guests.  They are situated in the rural Hinterland of Shoreham and so have access to natural bushland and the sea. Enjoy fine dining, vineyards, shops, galleries and spas as well as world-class golf courses all within a 15 minute drive.",
   },
   {
     type: "accom",
-    id: "hh",
+    id: "haven-red-hill",
     subtitle: "4 min from Polperro",
     title: "Haven Red Hill",
     image: HavenRedHill,
     imageBig: HavenRedHillBig,
+    maps: "https://goo.gl/maps/hXGC3q6x9BbgoMmt8",
+    tel: "+61417568597",
+    website: "http://www.havenredhill.com.au/",
     description:
       "Haven Red Hill has three beautiful, bespoke suites that will elevate you from your everyday. Immerse yourself in natural beauty without having to compromise on comfort or contemporary style. Whether its two nights or more, your stay will delight the senses. Explore the 11 acres, help yourself to the organic fruit and fragrant herbs, soak up the views or sit around the log fire under the stars.",
   },
   {
     type: "accom",
-    id: "rhf",
+    id: "red-hill-barn",
     subtitle: "3 min from Polperro",
-    title: "Red Hill Barm",
-    image: RedHillFarm,
-    imageBig: RedHillFarmBig,
+    title: "Red Hill Barn",
+    image: RedHillBarn,
+    imageBig: RedHillBarnBig,
+    maps: "https://goo.gl/maps/8rHMDgrDKJ7uGFL47",
+    website: "http://www.redhillbarn.com.au/",
+    tel: "+61408548429",
     description:
       "Completed in March 2019. Surrounded by vineyards, coastal walks and gourmet food and wine experiences, this beautiful architecturally designed barn is so warm and inviting, you’ll never want to leave. There is so much to enjoy in Red Hill / Main Ridge and its surrounds.",
   },
   {
     type: "accom",
-    id: "qh",
+    id: "quattro-at-mantons-creek",
     subtitle: "8 min from Polperro",
-    title: "Quattro Hotel",
+    title: "Quattro at Manton's Creek",
     image: Quattro,
     imageBig: QuattroBig,
+    maps: "https://g.page/quattro-at-mantons-creek?share",
+    tel: "+61359896222",
+    website: "http://www.quattromantonscreek.com.au/",
     description:
       "The property features Quattro Restaurant, which is a unique, regional venue with views across the vines. This tranquil restaurant offers an intimate and relaxed Mediterranean inspired dining experience, to be enjoyed with estate-produced wine.",
   },
   {
     type: "accom",
-    id: "ga",
+    id: "georges-on-arthurs",
     subtitle: "11 min from Polperro",
     title: "George's on Arthur's",
     image: Georges,
     imageBig: GeorgesBig,
+    website: "http://georgesonarthurs.com.au/",
+    maps: "https://g.page/GeorgesBB?share",
+    tel: "+61359818700",
     description:
       "A place where tranquility meets modern beauty…welcome to this unique contemporary HOTEL! A high quality, purpose built and architecturally designed masterpiece, Georges re-defines the boutique hotel experience",
   },
   {
     type: "accom",
-    id: "jh",
+    id: "jackalope-hotel",
     subtitle: "7 min from Polperro",
     title: "Jackalope Hotel",
     image: Jackalope,
     imageBig: JackalopeBig,
+    maps: "https://goo.gl/maps/4BqF54Vh8ge3bdmx7",
+    website: "http://www.jackalopehotels.com/",
+    tel: "+61359312500",
     description:
       "Delivering unparalleled comfort and luxury for a most memorable stay, these spacious suites (85 sqm) offer sunset views over Willow Creek Vineyard. The Lair's open floorplan, loft ceilings and an expansive terrace create a sense of tranquillity and space, but the revel is in the detail.",
   },
   {
     type: "accom",
-    id: "tcrh",
+    id: "the-cabin-at-red-hill",
     subtitle: "8 min from Polperro",
     title: "The Cabin @ Red Hill",
     image: TheCabin,
