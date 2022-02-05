@@ -46,11 +46,11 @@ const headerImage = (route) => {
 const containerVariants = {
   initial: {
     opacity: 0,
-    y: 60,
+    y: -30,
   },
   exit: {
     opacity: 0,
-    y: 60,
+    y: -30,
     transition: {
       delay: 1,
       staggerChildren: 0.1,

@@ -8,7 +8,6 @@ let Navigation = styled(motion.div)`
   align-items: center;
   justify-content: center;
   background: linear-gradient(0deg, rgba(11, 29, 38, 0) 0%, #0b1d26 100%);
-  color: var(--white);
   width: 100%;
   height: 130px;
   position: fixed;
@@ -33,8 +32,10 @@ let ItemText = styled.span`
     bottom: -6px;
     left: 0;
     border-bottom: 3px solid transparent;
-    transform: translateY(10px);
+    border-radius: 999px;
+    transform: translateY(8px);
     transition: transform ease 0.5s, border-color ease 0.5s;
+    color: var(--green);
   }
 `;
 
@@ -42,7 +43,7 @@ let Item = styled(Link)`
   font-size: 0.825em;
   font-weight: 400;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 1);
+  color: var(--white);
   margin: 5px;
   padding: 5px 10px;
   border-radius: 999px;
@@ -50,6 +51,7 @@ let Item = styled(Link)`
   &:hover ${ItemText}:after {
     transform: translateY(0);
     border-bottom-color: var(--green);
+    color: var(--green);
   }
 `;
 
@@ -71,14 +73,14 @@ export default function Nav() {
 
   const variants = {
     visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: -25 },
+    hidden: { opacity: 0, y: -20 },
   };
 
   return (
     <Navigation
       variants={variants}
       animate={hidden ? "hidden" : "visible"}
-      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.8 }}
     >
       <Menu>
         <Item to="/venue">

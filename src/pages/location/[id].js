@@ -58,13 +58,19 @@ let HeaderText = styled.div`
 
 let Info = styled(motion.div)`
   width: 45%;
-
+  background-color: rgba(11, 29, 38, 0.7);
+  padding: 40px;
+  border-radius: 10px;
   @media (max-width: ${theme.breakpoints.small}) {
     width: 100%;
   }
 `;
 
 let InfoRow = styled.div`
+  letter-spacing: 0.03em;
+
+  font-weight: 300;
+  color: var(--green);
   margin-bottom: 30px;
 `;
 
@@ -177,7 +183,9 @@ const LocationSection = ({ id, action }) => {
         <Info variants={variants}>
           <InfoRow>
             <InfoTitle>website</InfoTitle>
-            <InfoLink href={search.website}>{search.website}</InfoLink>
+            <InfoLink target="blank" href={search.website}>
+              {search.website}
+            </InfoLink>
           </InfoRow>
           <InfoRow>
             <InfoTitle>email</InfoTitle>
